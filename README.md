@@ -58,6 +58,13 @@ foreach ($ModuleFile in $ModuleFiles)
     Expand-Archive "$env:TEMP\PowerShell-Module-Switcher-main\Modules\$ModuleFile" -DestinationPath "C:\PowerShellModules" -Force
 }
 
+# Unblock each file that was extracted
+$Items = Get-ChildItem "C:\PowerShellModules" -Recurse -Verbose
+foreach ($Item in $Items)
+{
+    Unblock-File -Path $Item.FullName -Verbose
+}
+
 # Clean up the download and temp files
 Remove-Item  -Path "$env:TEMP\PowerShell-Module-Switcher-main" -Force -Recurse
 Remove-Item -Path "$env:TEMP\PowerShell-Module-Switcher.zip" -Force
