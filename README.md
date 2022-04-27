@@ -80,6 +80,37 @@ The above code performs the following:
 4. In C:\PowerShellModules create subfolders for each module type. ASE-Az, Az, AzureRM, Hub-Az, Hub-AzureRM.
 5. Download and extract the PowerShell modules for each type to the appropriate folder.
 
-## To use the utility
+## Use the utility
 
+To set your module directories, you can run the following:
+
+Set PowerShell to use Azure Stack Edge Az Modules
+```
+Load-PSModules -ModuleType ASE-Az
+```
+
+Set PowerShell to use Azure Az Modules
+```
+Load-PSModules -ModuleType Az
+```
+
+Set PowerShell to use Azure RM Modules
+```
+Load-PSModules -ModuleType AzureRM
+```
+
+Set PowerShell to use Azure Stack Hub AzureRM Modules
+```
+Load-PSModules -ModuleType Hub-AzureRM
+```
+
+Set PowerShell to use Azure Stack Hub Az Modules
+```
+Load-PSModules -ModuleType Hub-Az
+```
+
+Reset PowerShell Module Directories to Default
+```
+Load-PSModules -ModuleType Default
+```
 
