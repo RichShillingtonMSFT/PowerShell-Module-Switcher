@@ -8,7 +8,7 @@ This is how I manage all of these without removing modules and manually making c
 
 Run the following in an elevated PowerShell window to setup your environment.
 
---
+```
 # URI of the Edge Diagnostics Zip
 $DownloadURI = 'https://github.com/RichShillingtonMSFT/PowerShell-Module-Switcher/archive/refs/heads/main.zip'
 
@@ -61,7 +61,7 @@ foreach ($ModuleFile in $ModuleFiles)
 # Clean up the download and temp files
 Remove-Item  -Path "$env:TEMP\PowerShell-Module-Switcher-main" -Force -Recurse
 Remove-Item -Path "$env:TEMP\PowerShell-Module-Switcher.zip" -Force
---
+```
 
 1. Create a folder called PowerShellFunctions in your Documents folder and copy Load-PSModules.ps1 to it.
 2. Copy profile.ps1 to C:\Windows\System32\WindowsPowerShell\v1.0\.
