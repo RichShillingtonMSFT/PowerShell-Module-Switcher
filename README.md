@@ -55,7 +55,7 @@ $ModuleFiles = @(
 
 foreach ($ModuleFile in $ModuleFiles)
 {
-    Expand-Archive "$env:TEMP\PowerShell-Module-Switcher-main\Modules\$($ModuleFile.FileName)" -DestinationPath "C:\PowerShellModules" -Force
+    Expand-Archive "$env:TEMP\PowerShell-Module-Switcher-main\Modules\$ModuleFile" -DestinationPath "C:\PowerShellModules" -Force
 }
 
 # Clean up the download and temp files
