@@ -46,22 +46,26 @@ Copy-Item -Path "$env:TEMP\PowerShell-Module-Switcher-main\profile.ps1" -Destina
 
 # Extract PowerShell Modules
 $ModuleFiles = @(
-@{FileName='ASE-Az.zip';FolderName='ASE-Az'}
-@{FileName='Az.zip';FolderName='Az'}
-@{FileName='AzureRM.zip';FolderName='AzureRM'}
-@{FileName='Hub-Az.zip';FolderName='Hub-Az'}
-@{FileName='Hub-AzureRM.zip';FolderName='Hub-AzureRM'}
+'ASE-Az.zip',
+'Az.zip',
+'AzureRM.zip',
+'Hub-Az.zip',
+'Hub-AzureRM.zip'
 )
 
 foreach ($ModuleFile in $ModuleFiles)
 {
-    Expand-Archive "$env:TEMP\PowerShell-Module-Switcher-main\Modules\$($ModuleFile.FileName)" -DestinationPath "C:\PowerShellModules\$($ModuleFile.FolderName)" -Force
+    Expand-Archive "$env:TEMP\PowerShell-Module-Switcher-main\Modules\$($ModuleFile.FileName)" -DestinationPath "C:\PowerShellModules" -Force
 }
 
 # Clean up the download and temp files
 Remove-Item  -Path "$env:TEMP\PowerShell-Module-Switcher-main" -Force -Recurse
 Remove-Item -Path "$env:TEMP\PowerShell-Module-Switcher.zip" -Force
+
+Exit
+#
 ```
+The above code performs the following:
 
 1. Create a folder called PowerShellFunctions in your Documents folder and copy Load-PSModules.ps1 to it.
 2. Copy profile.ps1 to C:\Windows\System32\WindowsPowerShell\v1.0\.
@@ -70,4 +74,5 @@ Remove-Item -Path "$env:TEMP\PowerShell-Module-Switcher.zip" -Force
 5. Download and extract the PowerShell modules for each type to the appropriate folder.
 
 ## To use the utility
+
 
